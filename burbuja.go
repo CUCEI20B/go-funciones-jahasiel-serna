@@ -8,15 +8,13 @@ func Burbuja(s []int64)  {
 		s[a] = s[b]
 		s[b] = t
 	}
-	limit := len(s) - 1
-
-	for limit > 0 {
+	
+	for limit := len(s) - 1; limit > 0; limit-- {
 		for i := 0; i < limit; i++ {
 			if s[i] > s[i + 1] {
 				swipe(s, i, i + 1)
 			}
 		}
-		limit--
 	}
 }
 
